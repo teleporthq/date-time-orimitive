@@ -11,14 +11,13 @@ export default {
     date: { type: [String, Date, Number], required: true },
     format: { type: String, default: 'DD/MM/YYYY' },
   },
+  data() {
+    return {
+      formattedDate: ''
+    };
+  },
   created() {
     this.formatDate()
-  },
-  methods: {
-    formatDate() {
-      const dateTime = dayjs.unix(new Date(this.date).getTime() / 1000);
-      this.formattedDate = dayjs(dateTime).format(this.format);
-    }
   },
   watch: {
     date() {
@@ -27,6 +26,12 @@ export default {
     format() {
       this.formatDate()
     }
-  }
+  },
+  methods: {
+    formatDate() {
+      const dateTime = dayjs.unix(new Date(this.date).getTime() / 1000);
+      this.formattedDate = dayjs(dateTime).format(this.format);
+    }
+  },
 }
 </script>
