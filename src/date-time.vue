@@ -11,11 +11,6 @@ export default {
     date: { type: [String, Date, Number], required: true },
     format: { type: String, default: 'DD/MM/YYYY' },
   },
-  data() {
-    return {
-      formattedDate: ''
-    };
-  },
   created() {
     this.formatDate()
   },
