@@ -16,8 +16,8 @@ export default {
   },
   methods: {
     formatDate() {
-      const dateTime = dayjs.unix(new Date(date).getTime() / 1000);
-      this.formattedDate = dayjs(dateTime).format(format);
+      const dateTime = dayjs.unix(new Date(this.date).getTime() / 1000);
+      this.formattedDate = dayjs(dateTime).format(this.format);
     }
   },
   watch: {

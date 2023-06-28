@@ -245,8 +245,8 @@ const K = {
   },
   methods: {
     formatDate() {
-      const M = Z.unix(new Date(date).getTime() / 1e3);
-      this.formattedDate = Z(M).format(format);
+      const M = Z.unix(new Date(this.date).getTime() / 1e3);
+      this.formattedDate = Z(M).format(this.format);
     }
   },
   watch: {
